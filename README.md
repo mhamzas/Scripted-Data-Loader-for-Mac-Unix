@@ -37,8 +37,12 @@ The open source version of dataloader is available from: https://github.com/forc
   ```
   $ bin/process.sh csvAccountExtractProcess
   ```
+This should produce the output file in the data/ directory and if the debug log was enabled, the trace file in the status/ directory.
 
-This should produce the output file in the data/ directory and if the debug log was enabled, the trace file in the status/ directory. 
+10. Edit the scheduler file and add this file in crontab (for cronjob)
+  ```
+  $ echo "* * * * * /path/to/sdl_scheduler.sh" >> crontab -e
+  ```
 
 Enjoy!
 - Hamza
