@@ -26,6 +26,6 @@ if [ "$JAVA" == "" ]; then
   echo "Unable to find Java Runtime in PATH"
   exit -1
 else
-  $JAVA -cp dataloader-36.0.0-uber.jar -Dsalesforce.config.dir=$CONF_DIR com.salesforce.dataloader.process.ProcessRunner process.name=$PROCESS
+  $JAVA -cp dataloader-42.0.0-uber.jar -Dsalesforce.config.dir=$CONF_DIR com.salesforce.dataloader.process.ProcessRunner process.name=$PROCESS
 fi
 
