@@ -12,7 +12,7 @@ The open source version of dataloader is available from: https://github.com/forc
 1. Java 1.6+, available in the PATH [Just Install JDK 1.8 for OSX (for Mac)]
 
 2. DataLoader JAR file from Windows or built from the open source project [If changed]. 
-(The current name/version of the jar file is: dataloader-36.0.0-uber.jar [included])
+(The current name/version of the jar file is: dataloader-46.0.0-uber.jar [included])
 
 ##Steps: 
 
@@ -20,7 +20,7 @@ The open source version of dataloader is available from: https://github.com/forc
   ```
   $ git clone https://github.com/mhamzas/Scripted-Data-Loader-for-Mac-Unix.git
   ```
-2. Copy the dataloader-36.0.0-uber.jar file to dataloader/ directory [If Changed, Edit encrypt and process and rename the file].
+2. Copy the dataloader-46.0.0-uber.jar file to dataloader/ directory [If Changed, Edit encrypt and process and rename the file].
 3. Generate the private key to encrypt the password
   ```
   $ bin/encrypt.sh -g <some-random-seed-text> 
