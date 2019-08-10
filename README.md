@@ -9,7 +9,7 @@ The open source version of dataloader is available from: https://github.com/forc
 
 ##Requirements: 
 
-1. Java 1.6+, available in the PATH [Just Install JDK 1.8 for OSX (for Mac)]
+1. Java SE >=11, available in the PATH (https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 2. DataLoader JAR file from Windows or built from the open source project [If changed]. 
 (The current name/version of the jar file is: dataloader-46.0.0-uber.jar [included])
@@ -23,23 +23,22 @@ The open source version of dataloader is available from: https://github.com/forc
 2. Copy the dataloader-46.0.0-uber.jar file to dataloader/ directory [If Changed, Edit encrypt and process and rename the file].
 3. Generate the private key to encrypt the password
   ```
-  $ bin/encrypt.sh -g <some-random-seed-text> 
+  $ bin/encrypt.sh -k <path to private.key file (ex. conf/>private.key)>
   ```
-4. Copy the output from Step 3 above to conf/private.key (replacing the text in there)
-5. Encrypt the salesforce password (+security token, if required) using the generated private key
+4. Encrypt the salesforce password (+security token, if required) using the generated private key
   ```
   $ bin/encrypt.sh -e "password+security token" conf/private.key
   ```
-6. Copy the output from Step 4 above to the conf/config.properties file for the sfdc.password token 
-7. Update the conf/config.properties file with sfdc.username and sfdc.endpoint token values
-8. Optionally, adjust any other parameters in the conf/config.properties file
-9. Run the sample account extract process
+5. Copy the output from Step 4 above to the conf/config.properties file for the sfdc.password token 
+6. Update the conf/config.properties file with sfdc.username and sfdc.endpoint token values
+7. Optionally, adjust any other parameters in the conf/config.properties file
+8. Run the sample account extract process
   ```
   $ bin/process.sh csvAccountExtractProcess
   ```
 This should produce the output file in the data/ directory and if the debug log was enabled, the trace file in the status/ directory.
 
-10. Edit the scheduler file and add this file in crontab (for cronjob)
+9. Edit the scheduler file and add this file in crontab (for cronjob)
   ```
   $ echo "* * * * * /path/to/sdl_scheduler.sh" >> crontab -e
   ```
